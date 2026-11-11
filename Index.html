@@ -4,103 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page -Doubthut</title>
-    
-    <style>
-        *{
-    margin:0px;
-    padding:0px;
-}
-#navbar{
-    background-color:crimson;
-    height:80px;
-    color:white;
-    font-size:25px;
-    font-weight: 100;
-    display:flex;
-    align-items: center;
-    
-    width :100%px;
-}
-a{
-    margin-right:100px;
-    text-decoration: none;
-    color:white;
-}
-#logo{
-    margin-right:400px;
-     display: flex;
-     align-items: center;
-     
-}
-#gradhat{
-    margin-left:90px;
-    margin-right:10px;
-}
-#login{
-        
-    width:100px;
-    
-    background-color:blueviolet;
-    border:1px solid black;
-    border-radius:50%;
-    padding-left:30px;
-}
-#about{
-    height:600px;
-    
-    background-color
-}
-#what{
-    color:rgb(22, 15, 160);
-    font-size:25px;
-    border:4px solid rgb(32, 203, 52);
-    width:280px;
-    height:60px;
-    border-radius:50%;
-    padding-left: 100px;
-    background-color:rgb(222, 101, 111);
-    padding-right:100px;
-    padding-top:30px ;
-    margin-top:70px;
-    margin-left:90px;
-    
-}
-#line1{
-    
-    font-size:25px;
-    margin-left:40px;
-    margin-top:30px;
-    color:bisque
-}
-    </style>
-</head>
-<body bgcolor=#8E94F2>
-    <header>
+  <link rel="stylesheet" href="homepage.css">  
+  </head>
+<body>
+    <header><div id="home"></div>
  <div id="navbar">
     <img id="gradhat"src="https://static.vecteezy.com/system/resources/previews/045/496/859/non_2x/graduation-hat-logo-design-for-education-image-isolated-on-white-background-vector.jpg" alt="gradhat" height="50" width="50">
 <div id="logo">
  <p style="font-style:italic;font-size:30px;">Doubt</p>
  <p style="font-style:italic;font-size:30px;color:yellow">Hut</p></div>
- <a href="#">Home</a>
- <a href="#"> Subjects</a>
-<a href="#"> Doubts </a>
-<a href="#"> Solutions</a>
-<p id="login">Login</p>
+ <a href="#home">Home</a>
+ <a href="#acadsubjects">Academic Doubts</a>
+<a href="#nonacad"> Non Academic Doubts </a>
+<a href="#mydoubts"> MyDoubts </a>
+ 
 
+<p id="login">Login</p>
+ 
  </div>
     </header>
 <main>
   <!---about us section (our idea)-->  
-<section>
+
 <div id="about">
 <h3 id="what">  Learn | Ask | Solve | Share </h3>
 <h1 style="font-size:60px;margin-left:200px;margin-top:40px"> Have a Doubt ?</h1>
-<h1 style="font-size:60px;margin-left:200px;color:rgb(30, 118, 169)"> Let's Solve it together</h1>
+<h1 style="font-size:60px;margin-left:200px;color:rgb(30, 118, 169)"> Let's Solve it together .💡</h1>
 
-<h3 id="line1">Ask academic or non-academic doubts, get solutions from fellow students, and <br>help others by sharing what you know.</h3>
+<h3 id="line1">Ask academic or non-academic doubts, get solutions from fellow students, and <br>help others by sharing what you know .</h3>
+  </div>
+
+
+
+<div class="doubttype">
+<!--choosing the cateogary of the doubt-->
+<h1 style="font-size:50px;margin-left:200px;"><span style="color:rgb(21, 21, 22);font-size:60px;"> What kind of doubt do you have ?⁉️</span></h1>
+<p style="color:#6b7280;padding-left:390px;font-size: 30px;">
+  Choose a category to find or ask your doubt.
+ </p>
+
+<div class="nonoracad"> 
+  <div style="font-size: 45px;" > 📚 </div>
+<h2 style="font-size:33px;color:rgb(235, 94, 12)">Academic Doubts</h2>
+<p style="color:#6b7280 ; font-size:25px;">Get help with Mathematics,Computer Programming , Web Developement and other academic subjects</p>
+<a href="#acadsubjects" class="subbtn"> Explore Academic → </a> 
+
+</div>
+
+<div class="nonoracad"> 
+ <div style="font-size: 45px;" > 🌱</div>
+<h2 style="font-size:33px;color :rgb(235, 94, 12)">Non Academic Doubts</h2>
+<p style="color:#6b7280 ; font-size:25px;"> Ask questions about careers, college life, technology, productivity, hobbies and everyday student life.</p>
+<a href="#" class="subbtn"> Explore Non Academic → </a>
+</div></div>
+
+<div id="acadsubjects">
+<h1 style="color:rgb(17, 18, 20) ; font-size: 70px; text-align: center;"> Academic subjects 📖</h1>
+<p style="color:#6b7280;text-align:center;margin-bottom: 50px; font-size:25px;">
+                Find doubts and solutions according to your subject.
+            </p>
+
+<div class="subjects" style="margin-left:50px"><div >📐</div>  Mathematics 
+  
+</div>
+<div class="subjects"><div class="icon">💻</div>Computer pro
+  
+</div>
+<div class="subjects"><div  class="icon">🌐 </div>Web Develop
+  
+</div>
+<div class="subjects"><div  class="icon"> 🤷‍♀️</div>English  
+  
+</div>
+<div class="subjects"><div  class="icon">⚡</div>Electrical&EE
+  
+</div>
+
+</div>
+
+
+<section id="askdoubt">
+<h1 style="color:rgb(17, 18, 20) ; font-size: 70px; text-align: center;"> Ask a Doubt ➕</h1>
+
+<p style="color:#6b7280; font-size:25px;margin-left:170px;">
+ Type your question or upload an image of the question. </p>
+
+<div id="askdbox">
+<label style="font-size: 27px; display: block; font-weight: bold;"> Doubt category</label>
+<select style="width:100% ; padding:13px; border-radius: 8px;font-size:20px; margin-top:10px;"> 
+  <option>Academic </option>
+  <option>Non Academic </option>
+</select>
+
+<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Subject </label>
+<select style="width:100% ; padding:13px; border-radius: 8px;font-size:20px; margin-top:10px;"> 
+  <option>Computer Programming </option>
+  <option>Web Developement </option>
+  <option>English</option>
+  <option>Maths</option>
+  <option>EEE</option>
+</select>
+
+<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Write Your Doubt </label>
+<textarea
+placeholder="Explain Your Doubt here........" style="height:170px; width:100%; margin-top:10px;">
+</textarea>
+
+<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Upload image </label>
+<div id="imagebox">
+<div style="font-size:40px;">📷</div>  
+<p style="color:#6b7280;margin-bottom: 20px;;"> Upload an Image of your Question</p>
+<input type="file" accept="image" style="margin-bottom:60px;">
+</div>
+
+<button id="postdoubtbtn">
+🚀 Post My Doubt
+</button>
 </div>
 </section>
-hlo
 
 
 
@@ -110,7 +131,27 @@ hlo
 
 
 
-</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
