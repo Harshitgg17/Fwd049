@@ -15,7 +15,7 @@
  <p style="font-style:italic;font-size:30px;color:yellow">Hut</p></div>
  <a href="#home">Home</a>
  <a href="#acadsubjects">Academic Doubts</a>
-<a href="#nonacad"> Non Academic Doubts </a>
+<a href="#nonacadsubjects"> Non Academic Doubts </a>
 <a href="#mydoubts"> MyDoubts </a>
  
 
@@ -32,7 +32,9 @@
 <h1 style="font-size:60px;margin-left:200px;color:rgb(30, 118, 169)"> Let's Solve it together .💡</h1>
 
 <h3 id="line1">Ask academic or non-academic doubts, get solutions from fellow students, and <br>help others by sharing what you know .</h3>
-  </div>
+<a href="#askdoubt" id="askbtn">✏️ Ask Your Doubt</a> 
+
+</div>
 
 
 
@@ -55,7 +57,7 @@
  <div style="font-size: 45px;" > 🌱</div>
 <h2 style="font-size:33px;color :rgb(235, 94, 12)">Non Academic Doubts</h2>
 <p style="color:#6b7280 ; font-size:25px;"> Ask questions about careers, college life, technology, productivity, hobbies and everyday student life.</p>
-<a href="#" class="subbtn"> Explore Non Academic → </a>
+<a href="#nonacadsubjects" class="subbtn"> Explore Non Academic → </a>
 </div></div>
 
 <div id="acadsubjects">
@@ -64,24 +66,77 @@
                 Find doubts and solutions according to your subject.
             </p>
 
-<div class="subjects" style="margin-left:50px"><div >📐</div>  Mathematics 
+<a class="subjects" href="subject-doubts.html?subject=Mathematics" style="margin-left:50px"><div >📐</div>  Mathematics 
   
-</div>
-<div class="subjects"><div class="icon">💻</div>Computer pro
+</a>
+<a class="subjects" href="subject-doubts.html?subject=Computer%20Programming"><div class="icon">💻</div>Computer programming
   
-</div>
-<div class="subjects"><div  class="icon">🌐 </div>Web Develop
+</a>
+<a class="subjects" href="subject-doubts.html?subject=Web%20Development"><div  class="icon">🌐 </div>Web Developement
   
-</div>
-<div class="subjects"><div  class="icon"> 🤷‍♀️</div>English  
+</a>
+<a class="subjects" href="subject-doubts.html?subject=English"><div  class="icon"> 🤷‍♀️</div>English  
   
-</div>
-<div class="subjects"><div  class="icon">⚡</div>Electrical&EE
+</a>
+<a class="subjects" href="subject-doubts.html?subject=EEE"><div  class="icon">⚡</div>Electrical&EE
   
-</div>
+</a>
 
 </div>
 
+
+
+<!-- NON-ACADEMIC DOUBTS SECTION -->
+<div id="hg"></div>
+<div id="nonacadsubjects">
+
+    <h2 id="nonacadheading">Non-Academic Doubts</h2>
+
+    <h3 id="nonacaddesc">
+        Got doubts about college life, daily problems, hobbies or anything else?
+        Ask here and solve them together!
+    </h3>
+
+    <div class="nonacad-container">
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Hostel">
+            <div class="nonacad-icon">🏠</div>
+            <div class="nonacad-name">Hostel</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Classroom">
+            <div class="nonacad-icon">🏫</div>
+            <div class="nonacad-name">Classroom</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Mess">
+            <div class="nonacad-icon">🍽️</div>
+            <div class="nonacad-name">Mess</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Campus">
+            <div class="nonacad-icon">🌳</div>
+            <div class="nonacad-name">Campus</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Technology">
+            <div class="nonacad-icon">💻</div>
+            <div class="nonacad-name">Technology</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Hobbies">
+            <div class="nonacad-icon">🎨</div>
+            <div class="nonacad-name">Hobbies</div>
+        </a>
+
+        <a class="nonacad-card" href="subject-doubts.html?subject=Personal%20%2F%20Everyday%20Life">
+            <div class="nonacad-icon">💡</div>
+            <div class="nonacad-name">Personal / Everyday Life</div>
+        </a>
+
+    </div>
+
+</div>
 
 <section id="askdoubt">
 <h1 style="color:rgb(17, 18, 20) ; font-size: 70px; text-align: center;"> Ask a Doubt ➕</h1>
@@ -90,24 +145,32 @@
  Type your question or upload an image of the question. </p>
 
 <div id="askdbox">
-<label style="font-size: 27px; display: block; font-weight: bold;"> Doubt category</label>
-<select style="width:100% ; padding:13px; border-radius: 8px;font-size:20px; margin-top:10px;"> 
-  <option>Academic </option>
-  <option>Non Academic </option>
+<label style="font-size: 27px; display: block; font-weight: bold;">
+    Doubt Category
+</label>
+
+<select id="doubtCategory" style="width:100%; padding:13px; border-radius:8px; font-size:20px; margin-top:10px;">
+    <option value="academic">Academic</option>
+    <option value="nonacademic">Non-Academic</option>
 </select>
 
-<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Subject </label>
-<select style="width:100% ; padding:13px; border-radius: 8px;font-size:20px; margin-top:10px;"> 
-  <option>Computer Programming </option>
-  <option>Web Developement </option>
-  <option>English</option>
-  <option>Maths</option>
-  <option>EEE</option>
+
+<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;">
+    Subject
+</label>
+
+<select id="doubtSubject" style="width:100%; padding:13px; border-radius:8px; font-size:20px; margin-top:10px;">
+    <option>Computer Programming</option>
+    <option>Web Development</option>
+    <option>English</option>
+    <option>Maths</option>
+    <option>EEE</option>
 </select>
 
-<label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Write Your Doubt </label>
+
+  <label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Write Your Doubt </label>
 <textarea
-placeholder="Explain Your Doubt here........" style="height:170px; width:100%; margin-top:10px;">
+placeholder="Explain Your Doubt here........" style="height:170px; width:100%; margin-top:10px;font-size:25px;">
 </textarea>
 
 <label style="font-size: 27px; display: block; margin-top:25px; font-weight:bold;"> Upload image </label>
@@ -132,6 +195,42 @@ placeholder="Explain Your Doubt here........" style="height:170px; width:100%; m
 
 
 
+<footer id="footer">
+    <div class="footer-container">
+
+        <!-- Website Name -->
+        <div class="footer-about">
+            <h2>Doubt<span>Hut</span> 💡</h2>
+            <p>A place where every doubt finds an answer.
+               Learn, ask, share and grow together.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#acadsubjects">Academic Doubts</a>
+            <a href="#nonacadsubjects">Non-Academic Doubts</a>
+            <a href="#askdoubt">Ask Your Doubt</a>
+        </div>
+
+        <!-- Subjects -->
+        <div class="footer-links">
+            <h3>Explore Subjects</h3>
+            <a href="subject-doubts.html?subject=Mathematics">Mathematics</a>
+            <a href="subject-doubts.html?subject=Computer%20Programming">Computer Programming</a>
+            <a href="subject-doubts.html?subject=Web%20Development">Web Development</a>
+            <a href="subject-doubts.html?subject=English">English</a>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>© 2026 DoubtHut | Made with ❤️ by students, for students</p>
+    </div>
+</footer>
 
 
 
@@ -154,5 +253,6 @@ placeholder="Explain Your Doubt here........" style="height:170px; width:100%; m
 
 
 
+<script src="script.js"></script>
 </body>
 </html>
