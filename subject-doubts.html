@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubtHut | Doubts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #8E94F2, lightseagreen);
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        header {
+            background: linear-gradient(to right, #ff0d3d, rgb(244, 8, 197));
+            color: white;
+            padding: 20px 40px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* BACK BUTTON */
+
+        #backbtn {
+            display: inline-block;
+            margin: 30px 50px;
+            padding: 12px 25px;
+            background: white;
+            color: #5141a8;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        #backbtn:hover {
+            transform: translateX(-5px);
+        }
+
+        /* PAGE HEADING */
+
+        #subjectTitle {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 20px;
+            color: #171721;
+        }
+
+        #description {
+            text-align: center;
+            font-size: 22px;
+            color: #f4f4f4;
+            margin: 20px;
+        }
+
+        /* DOUBTS CONTAINER */
+
+        #doubtsContainer {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* DOUBT CARD */
+
+        .doubt-card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .doubt-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .doubt-card h2 {
+            font-size: 25px;
+            margin: 20px 0;
+            color: #25243b;
+        }
+
+        .doubt-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* TAGS */
+
+        .tag {
+            display: inline-block;
+            background: #eee8ff;
+            color: #6a40bc;
+            padding: 7px 14px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* ANSWER */
+
+        .answer {
+            background: #f1f7ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .answer strong {
+            color: #3b48a8;
+            font-size: 18px;
+        }
+
+        /* LIKE BUTTON */
+
+        .like-btn {
+            background: #ffedf3;
+            color: #e63272;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 17px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .like-btn:hover {
+            background: #ffd8e7;
+            transform: scale(1.05);
+        }
+
+        /* NO CONTENT */
+
+        #emptyMessage {
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            padding: 40px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                font-size: 22px;
+                padding: 20px;
+            }
+
+            #subjectTitle {
+                font-size: 32px;
+            }
+
+            #description {
+                font-size: 17px;
+            }
+
+            #doubtsContainer {
+                padding: 15px;
+            }
+
+            .doubt-card {
+                padding: 20px;
+            }
+
+            .doubt-card h2 {
+                font-size: 21px;
+            }
+
+            .doubt-card p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        DoubtHut 💡
+    </header>
+
+    <a href="index.html" id="backbtn">← Back to Home</a>
+
+    <h1 id="subjectTitle"></h1>
+
+    <p id="description">
+        Ask doubts, share knowledge and help fellow students!
+    </p>
+
+    <div id="doubtsContainer"></div>
+
+    <script>
+
+        // Get the subject from the URL
+        const params = new URLSearchParams(window.location.search);
+        let subject = params.get("subject") || "General";
+
+        // Display the subject heading
+        document.getElementById("subjectTitle").textContent =
+            "📚 " + subject + " Doubts";
+
+
+        // SAMPLE DOUBTS FOR DIFFERENT SUBJECTS
+
+        const doubtsData = {
+
+            "Mathematics": [
+                {
+                    question: "How do we solve integration by parts?",
+                    description: "I am confused about choosing which function to differentiate and which one to integrate.",
+                    tags: ["Important", "Conceptual"],
+                    answer: "Use the ILATE rule to choose the function for differentiation. Then apply the integration by parts formula: ∫u dv = uv − ∫v du."
+                },
+                {
+                    question: "How do I understand limits in calculus?",
+                    description: "Can someone explain limits in a simple way with an example?",
+                    tags: ["Conceptual"],
+                    answer: "A limit tells us the value a function approaches as the input gets closer to a particular number."
+                }
+            ],
+
+            "Maths": [
+                {
+                    question: "How do we solve integration by parts?",
+                    description: "I am confused about choosing which function to differentiate and which one to integrate.",
+                    tags: ["Important", "Conceptual"],
+                    answer: "Use the ILATE rule to choose the function for differentiation. Then apply the integration by parts formula."
+                }
+            ],
+
+            "Computer Programming": [
+                {
+                    question: "What is the difference between a loop and a conditional statement?",
+                    description: "I don't understand when to use a for loop and when to use an if statement.",
+                    tags: ["Conceptual", "Important"],
+                    answer: "A loop repeats a block of code multiple times. An if statement checks a condition and executes code only when that condition is true."
+                },
+                {
+                    question: "Why do we use arrays?",
+                    description: "Why can't we just store each value in a separate variable?",
+                    tags: ["Conceptual"],
+                    answer: "Arrays allow us to store multiple values of a similar type in one variable and access them using an index."
+                }
+            ],
+
+            "Web Development": [
+                {
+                    question: "What is the difference between HTML, CSS and JavaScript?",
+                    description: "I am learning web development but I don't understand the role of all three.",
+                    tags: ["Beginner", "Important"],
+                    answer: "HTML creates the structure, CSS styles the webpage, and JavaScript adds interactivity and dynamic behaviour."
+                },
+                {
+                    question: "How do I connect CSS to HTML?",
+                    description: "Where should I write the link to my CSS file?",
+                tags: ["Beginner"],
+                    answer: "Inside the HTML head section, use the link tag: <link rel='stylesheet' href='style.css'>"
+                }
+            ],
+
+            "English": [
+                {
+                    question: "How can I improve my vocabulary?",
+                    description: "I forget new words easily. What is the best way to remember them?",
+                    tags: ["Discussion", "Tips"],
+                    answer: "Learn a few words daily, use them in sentences, revise them regularly, and read articles or books to see them in context."
+                }
+            ],
+
+            "EEE": [
+                {
+                    question: "What is the difference between AC and DC current?",
+                    description: "Can someone explain their difference and where they are used?",
+                    tags: ["Important", "Conceptual"],
+                    answer: "DC flows in one direction, while AC periodically changes direction. Batteries commonly provide DC, while household power supply is AC."
+                }
+            ],
+
+            "Hostel": [
+                {
+                    question: "How can I manage hostel life and studies together?",
+                    description: "I find it difficult to study with all the noise and activities around me.",
+                    tags: ["Student Life", "Tips"],
+                    answer: "Try creating a daily routine, use library or quiet study spaces, and communicate politely with your roommates about study hours."
+                },
+                {
+                    question: "What should I do if my hostel Wi-Fi is not working?",
+                    description: "The connection keeps disconnecting. What can I try?",
+                    tags: ["Technology"],
+                    answer: "Restart Wi-Fi on your device, forget and reconnect to the network, and check if other students are facing the same problem. If it continues, report it to the hostel network administrator."
+                }
+            ],
+
+            "Classroom": [
+                {
+                    question: "How do I ask a question in class without feeling nervous?",
+                    description: "I know I have a doubt but I hesitate to ask in front of everyone.",
+                    tags: ["Discussion", "Advice"],
+                    answer: "Remember that other students may have the same question. Start by asking after class or writing your question down, then gradually become more comfortable asking aloud."
+                }
+            ],
+
+            "Mess": [
+                {
+                    question: "How can we give feedback about the mess food?",
+                    description: "Sometimes food quality or menu options need improvement. How can students communicate this?",
+                    tags: ["Discussion", "Student Life"],
+                    answer: "You can collect suggestions from students and respectfully share them with the mess committee or hostel administration."
+                }
+            ],
+
+            "Campus": [
+                {
+                    question: "Where are the best places to study on campus?",
+                    description: "I want to find a quiet place apart from my hostel room.",
+                    tags: ["Tips", "Discussion"],
+                    answer: "Explore the library, empty classrooms during free periods, study halls, and peaceful areas on campus. Check which spaces are officially open for student use."
+                }
+            ],
+
+            "Technology": [
+                {
+                    question: "Which laptop is suitable for a college student?",
+                    description: "I need a laptop for programming, assignments and normal college work.",
+                    tags: ["Technology", "Advice"],
+                    answer: "For general programming and college work, prioritize at least 16 GB RAM if your budget allows, an SSD, good battery life, and a reliable processor. Your course requirements also matter."
+                }
+            ],
+
+            "Hobbies": [
+                {
+                    question: "How can I start learning photography?",
+                    description: "I am interested in photography but I only have my phone.",
+                    tags: ["Beginner", "Hobbies"],
+                    answer: "Start with your phone! Practise lighting, composition, framing and perspective. Try taking one photo daily around a theme and review what you like about it."
+                }
+            ],
+
+            "Personal / Everyday Life": [
+                {
+                    question: "How can I manage my time better in college?",
+                    description: "I have classes, assignments, hobbies and personal work, and I can't balance them.",
+                    tags: ["Advice", "Student Life"],
+                    answer: "Make a realistic weekly schedule, prioritize urgent tasks, break larger assignments into smaller steps, and keep some free time for rest."
+                }
+            ]
+
+        };
+
+
+        // Find doubts for the selected subject
+        const doubts = doubtsData[subject] || [];
+
+        const container = document.getElementById("doubtsContainer");
+
+
+        // Display the doubts
+        if (doubts.length === 0) {
+
+            container.innerHTML = `
+                <p id="emptyMessage">
+                    No doubts have been posted in this category yet.
+                    Be the first to ask one!
+                </p>
+            `;
+
+        } else {
+
+            doubts.forEach(function(doubt) {
+
+                const card = document.createElement("div");
+                card.className = "doubt-card";
+
+                let tagHTML = "";
+
+                doubt.tags.forEach(function(tag) {
+                    tagHTML += `<span class="tag">${tag}</span>`;
+                });
+
+                card.innerHTML = `
+                    ${tagHTML}
+
+                    <h2>${doubt.question}</h2>
+
+                    <p>${doubt.description}</p>
+
+                    ${doubt.answer ? `
+                        <div class="answer">
+                            <strong>💬 Answer / Solution</strong>
+                            <p>${doubt.answer}</p>
+                        </div>
+                    ` : ""}
+
+                    <button class="like-btn" onclick="likeDoubt(this)">
+                        ❤️ <span>0</span>
+                    </button>
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+
+        // LIKE BUTTON FUNCTION
+        function likeDoubt(button) {
+
+            const count = button.querySelector("span");
+
+            count.textContent = Number(count.textContent) + 1;
+
+        }
+
+    </script>
+
+</body>
+</html>
