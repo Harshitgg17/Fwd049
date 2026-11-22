@@ -100,27 +100,160 @@ a{
     border:2px solid gray;
 }
 .subbtn{
-     border:none; background:#236803; color:white; padding:15px 20px; border-radius:8px; cursor:pointer;
-        display:inline-block;
-        margin-top: 10px;
+    
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 30px;
+    padding: 16px 35px;
+    background: linear-gradient(to right, #15d7b7, rgb(19, 141, 241));
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    }
+
+    .subbtn:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 #acadsubjects{
     height:500px;
      background:linear-gradient(to right,#8E94F2,lightseagreen);
 }
-
-.subjects{
-    height:110px;
-    width:180px;
-    background-color:white;
-    border-radius:10px;
-    display:inline-block;
-    margin-right:30px;
-    padding:20px;
-    font-size:30px;
+.subjects {
+    height: 150px;
+    width: 180px;
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    margin-right: 30px;
+    padding: 20px;
+    font-size: 30px;
     text-align: center;
+    text-decoration: none;
+    color: #222;
+    vertical-align: top;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.subjects:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    background-color: #f3f0ff;
+}
+
+.subjects .icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+/* NON-ACADEMIC DOUBTS SECTION */
+
+#nonacadsubjects {
     
-    
+    padding: 40px 20px;
+    text-align: center;
+    background:linear-gradient(to right,#8E94F2,lightseagreen);
+
+}
+
+#nonacadheading {
+    font-size: 45px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+#nonacaddesc {
+    font-size: 22px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 45px;
+}
+
+
+
+
+.nonacad-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+
+.nonacad-card {
+    height: 150px;
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-decoration: none;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+
+.nonacad-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.20);
+    background-color: #f3f0ff;
+}
+
+
+
+
+.nonacad-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.nonacad-name {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+
+@media (max-width: 600px) {
+
+    #nonacadheading {
+        font-size: 32px;
+    }
+
+    #nonacaddesc {
+        font-size: 17px;
+    }
+
+    .nonacad-card {
+        width: 130px;
+        height: 120px;
+    }
+
+    .nonacad-name {
+        font-size: 19px;
+    }
+
+    .nonacad-icon {
+        font-size: 35px;
+    }
+
 }
 #askdoubt{
     background:linear-gradient(to right,#8E94F2,lightseagreen);
@@ -153,4 +286,258 @@ a{
     border-radius:10px;
     margin-top:20px;
     border:none;
+}
+#askbtn {
+    display: inline-block;  
+    margin-left: 40px;
+    margin-top: 30px;
+    padding: 16px 35px;
+    background: linear-gradient(to right, #ff0d3d, rgb(244, 8, 197));
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+}
+
+#askbtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, rgb(244, 8, 197), #ff0d3d);
+}
+
+#footer {
+    background: linear-gradient(to right, #252ced, rgb(156, 29, 234));
+    color: white;
+    padding: 50px 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-about {
+    width: 280px;
+}
+
+.footer-about h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.footer-about h2 span {
+    color: yellow;
+}
+
+.footer-about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 0px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: yellow;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+}
+
+/* RESPONSIVE CSS - ONLY FOR SMALLER SCREENS */
+
+@media screen and (max-width: 768px) {
+
+    #navbar {
+        position: relative;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    #logo {
+        margin-right: 15px;
+    }
+
+    #gradhat {
+        margin-left: 10px;
+    }
+
+    #navbar a {
+        margin: 8px;
+        font-size: 16px;
+    }
+
+    #about {
+        height: auto;
+        padding: 80px 20px 40px;
+    }
+
+    #what {
+        margin: auto;
+        width: fit-content;
+        max-width: 100%;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #about h1 {
+        margin-left: 0 !important;
+        font-size: 38px !important;
+    }
+
+    #line1 {
+        margin: 25px 0;
+        font-size: 20px;
+    }
+
+    .doubttype {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .nonoracad {
+        width: 90%;
+        height: auto;
+        margin: 25px auto;
+        display: block;
+    }
+
+    #acadsubjects {
+        height: auto;
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .subjects {
+        margin: 15px !important;
+    }
+
+    #nonacadsubjects {
+        padding: 30px 15px;
+    }
+
+    #askdoubt {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    #askdbox {
+        height: auto;
+        margin-top: 30px;
+    }
+
+    #askdbox textarea {
+        max-width: 100%;
+    }
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media screen and (max-width: 480px) {
+
+    #navbar {
+        gap: 5px;
+    }
+
+    #navbar a {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    #about h1 {
+        font-size: 30px !important;
+    }
+
+    #line1 {
+        font-size: 17px;
+    }
+
+    #acadsubjects h1 {
+        font-size: 35px !important;
+    }
+
+    .subjects {
+        width: 130px;
+        height: 150px;
+        margin: 10px !important;
+        font-size: 20px;
+    }
+
+    #askdoubt h1 {
+        font-size: 35px !important;
+    }
+
+    #askdbox {
+        padding: 20px 12px;
+    }
+
+    #askdbox label {
+        font-size: 20px !important;
+    }
+
+    #askdbox select,
+    #askdbox textarea {
+        font-size: 17px !important;
+    }
+
+    #footer {
+        padding: 30px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
 }
